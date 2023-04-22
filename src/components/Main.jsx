@@ -11,7 +11,6 @@ const Main = () => {
   const [nextUrl, setNextUrl] = useState(null);
   const [prevUrl, setPrevUrl] = useState(null);
   const [pokeDex, setPokeDex] = useState(null);
-  const [cardsReady, setCardsReady] = useState(false);
 
   const fetchPokemon = async () => {
     setLoading(true);
@@ -20,10 +19,9 @@ const Main = () => {
     setPrevUrl(res.data.previous);
     await Promise.all(res.data.results.map(async (item) => {
       const result = await axios.get(item.url);
-      setPokeData(prevState => [...prevState, result.data]);
+      setPokeData(prevState => [...prevState, result.data].sort((a, b) => a.id - b.id));
     }));
     setLoading(false);
-    setCardsReady(true);
   };
 
   useEffect(() => {
@@ -33,13 +31,11 @@ const Main = () => {
   const handlePrevClick = () => {
     setPokeData([]);
     setUrl(prevUrl);
-    setCardsReady(false);
   };
 
   const handleNextClick = () => {
     setPokeData([]);
     setUrl(nextUrl);
-    setCardsReady(false);
   };
 
   return (
@@ -48,15 +44,7 @@ const Main = () => {
         {loading ? (
           <p>Loading...</p>
         ) : (
-          <>
-            {cardsReady ? (
-              <Card pokemon={pokeData} infoPokemon={poke => setPokeDex(poke)} />
-            ) : (
-              <div style={{ visibility: "hidden" }}>
-                <Card pokemon={pokeData} infoPokemon={poke => setPokeDex(poke)} />
-              </div>
-            )}
-          </>
+          <Card pokemon={pokeData} infoPokemon={poke => setPokeDex(poke)} />
         )}
       </div>
       <div className="right-content">
