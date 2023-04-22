@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    background-color: #272626;
+    color: #fff;
+}
+
+.container{
+    width: 100%;
+    margin: auto;
+    padding-top: 50px;
+    display: flex;
+}
+
+.left-content, .right-content{
+    flex-basis: 50%;
+}
+
+.left-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px, 0.5fr));
+    grid-gap: 50px;
+}
+
+.card{
+    width: 250px;
+    border-radius: 1rem;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.5);
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    background-color: #b74555;
+}
+
+.card-container{
+    min-width: 200px;
+    min-height: 250px;
+}
+
+.card:hover{
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
+}
+
+.right-content{
+    width: 50%;
+    text-align: center;
+    color: #fff;
+    position: fixed;
+    top: 50px;
+    right: 10px;
+}
+
+.right-content img{
+    margin: 1.5rem;
+    height: 160px;
+}
+
+.right-content h1{
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #b74555;
+}
+
+.abilities{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.abilities .group{
+    background-color: #fff;
+    color: #b74555;
+    padding: 0.5rem;
+    font-size: 12px;
+    border-radius: 8px;
+    margin-left: 1rem;
+}
+
+.base-stat{
+    margin-top: 2rem;
+}
+
+.btns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: #111;
+}
+
+.btns button{
+    outline: none;
+    border: none;
+    width: 150px;
+    padding: 0.3rem 0;
+    margin: 1rem;
+    font-size: 17px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #b74555;
+    border-radius: 8px;
+}
