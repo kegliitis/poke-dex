@@ -12,7 +12,7 @@ export default function App(){
         <header>
             <nav className="navbar">
                 <div className="navbar-container">
-                    <Link to="/" className="navbar-logo">My App</Link>
+                    <Link to="/" className="navbar-logo">Poke-Dex</Link>
                     <div className="navbar-links">
                         <Link to="/" className="navbar-link">Home</Link>
                         <Link to="/about" className="navbar-link">About</Link>
