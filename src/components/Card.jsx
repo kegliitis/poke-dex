@@ -30,7 +30,7 @@ const Card = ({ pokemon, loading, infoPokemon }) => {
               >
                 <p>{item.id}</p>
                 <img src={item.sprites.front_default} alt="item.id" />
-                <h>{item.name.charAt(0).toUpperCase() + item.name.slice(1)}</h>
+                <h2>{item.name.charAt(0).toUpperCase() + item.name.slice(1)}</h2>
               </div>
             ))}
           </>
